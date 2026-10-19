@@ -18,11 +18,11 @@ Our Q4 marketing push is off to an encouraging start, with social media engageme
 
 _Which model judged them, then the judge's reply:_
 CHAT GTP 6
-_Version A: 1, Concise and faithful to the email, preserving all key results, issues, deadlines, and required actions without adding unsupported information.
-_Version B: 0, Wordy and invents claims that the paid ad experiments were successful, the team can launch quickly, and the tracking links are needed to measure results accurately.
+Version A: 1, Concise and faithful to the email, preserving all key results, issues, deadlines, and required actions without adding unsupported information.
+Version B: 0, Wordy and invents claims that the paid ad experiments were successful, the team can launch quickly, and the tracking links are needed to measure results accurately.
 
 ## Do you agree with the judge?
 
 _One line per version: agree or disagree, and why._
-_Version A: Agree with the judge, the summary is concise and only uses information from the email. The actions are clearly hightlighted.
-_Version B: Agree with the judge, the summary includes only the information from the email but also incorporates additional opinions and interpretations that is not needed.
+Version A: Agree with the judge, the summary is concise and only uses information from the email. The actions are clearly hightlighted.
+Version B: Agree with the judge, the summary includes only the information from the email but also incorporates additional opinions and interpretations that is not needed.
