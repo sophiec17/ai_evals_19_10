@@ -6,21 +6,19 @@
 
 ## Version A output
 
-_Paste the output from the Version A chat._Social media engagement rose 25% month-over-month, driven by the new content calendar and paid ad experiments.
+Social media engagement rose 25% month-over-month, driven by the new content calendar and paid ad experiments.
 Newsletter open rates fell from 42% to 35%; new subject line tests begin next week. The product video campaign is delayed to November pending legal approval, though creative assets are ready.
 Action needed: all campaign tracking links must be added by Friday. This was using Sonnet 5.5.
 
 ## Version B output
 
-_Paste the output from the Version B chat._Our Q4 marketing push is off to an encouraging start, with social media engagement climbing 25% month-over-month thanks to the new content calendar and successful paid ad experiments. The creative assets for the product video campaign are fully ready, positioning us to launch quickly once legal approval comes through, with a November timeline now expected. On the watch list, newsletter open rates slipped from 42% to 35%, though the team will begin testing new subject lines next week to recover momentum. As a next step, all campaign tracking links must be added by Friday to ensure we can measure results accurately. This was using Sonnet 5.5.
+Our Q4 marketing push is off to an encouraging start, with social media engagement climbing 25% month-over-month thanks to the new content calendar and successful paid ad experiments. The creative assets for the product video campaign are fully ready, positioning us to launch quickly once legal approval comes through, with a November timeline now expected. On the watch list, newsletter open rates slipped from 42% to 35%, though the team will begin testing new subject lines next week to recover momentum. As a next step, all campaign tracking links must be added by Friday to ensure we can measure results accurately. This was using Sonnet 5.5.
 
 ## Judge scores
 
 _Which model judged them, then the judge's reply:_
 CHAT GTP 6
-_Version A: 1 or 0, one-sentence reason_
 Version A: 1, Concise and faithful to the email, preserving all key results, issues, deadlines, and required actions without adding unsupported information.
-_Version B: 1 or 0, one-sentence reason_
 Version B: 0, Wordy and invents claims that the paid ad experiments were successful, the team can launch quickly, and the tracking links are needed to measure results accurately.
 
 ## Do you agree with the judge?
