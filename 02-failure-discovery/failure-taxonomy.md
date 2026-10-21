@@ -1,12 +1,13 @@
 # Failure Taxonomy · Ascend IQ
 
-Paste the markdown from the Module 2 Lab Guide (Activity 2) over this file, or upload the downloaded `failure-taxonomy.md` in its place, then commit.
-
 ## Top 3 Prioritized Failures
 
 | Rank | Failure | Trust Tag | Frequency | Severity |
 |---|---|---|---|---|
+| 1 | Showing incorrect information | #HALLUCINATION | 4/20, HIGH | P0 |
+| 2 | Omitting important information  | #ROBUSTNESS | 3/20, HIGH | P1 |
+| 3 | Bias in companies and competitor analysis  | #HALLUCINATION | 1/20, LOW | P3 |
 
 ## #1 Risk · Business Impact
 
-_This failure matters because [technical error] results in [business impact]._
+This failure matters because the AI is hallucinating facts resulting incorrect data being presented to business users that do not match the cited results. This means the platform provides unreliable and untrustworthy content.
