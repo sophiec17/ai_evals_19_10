@@ -1,35 +1,34 @@
-# Lab 1, Ascend Analytics Coverage Matrix
+# Module 5 · Coverage Matrix · AI Voice Agent
 
-> Repo file `ai-evals/05-scale/lab-1-coverage-matrix.md`. Feeds the **Coverage / scale** slide of the final pitch deck (Module 6).
->
-> Fill this with the **Coverage Matrix Tool**, then **Copy markdown** and paste it over this file. The headings below mirror the tool's output exactly. **Force ≥2 ❌ gaps** — an all-green matrix isn't real.
+## Coverage Row
 
-**Product:** _…_
-
-## Coverage row
-
-| Product | Hallucination | Bias | Latency | Toxicity | Drift Monitoring |
+| Product | Hallucination Rate | Fairness | Latency | UX Trust | Robustness |
 |---|---|---|---|---|---|
-| _…_ | _✅ / ⚠️ / ❌_ | _✅ / ⚠️ / ❌_ | _✅ / ⚠️ / ❌_ | _✅ / ⚠️ / ❌_ | _✅ / ⚠️ / ❌_ |
+| AI Voice Agent | ⚠️ Partial | ⚠️ Partial | ⚠️ Partial | ✅ Covered | ✅ Covered |
 
-## Method + Ground Truth (two ✅/⚠️ cells)
+## What Runs Today
 
-### _Risk name 1_
-- **Method:** _how you evaluate it_
-- **Ground truth:** _what you grade against_
+- An eval gate tests its answers to 300 billing questions before every release.
+- A supervisor listens to 10 random calls a week for tone.
+- A drift monitor alerts when callers start asking about things the agent wasn’t tested on.
 
-### _Risk name 2_
-- **Method:** _how you evaluate it_
-- **Ground truth:** _what you grade against_
+## Accepted Gap
 
-## Strategic acceptance
+**Latency.** We accept this gap because there should be in-built timeout on response processing and generating. Once request hit threshold, there should be in-built fallback journeys.
 
-**Accepted gap:** _which ❌ you're accepting_
+We’ll look again:  We'll revise this, if escalation rates are above 30%. 
 
-> _Why it's an acceptable risk right now + the kill criterion / date that would change the call._
+## Critical Gap
 
-## Critical mitigation
+We’ve flagged Fairness as the most critical gap for AI Voice Agent because users should not receive bias responses and users for the same queries should receive consistent responses. Fairness failures (accents, dialects, speech impairments) carry reputational and regulatory exposure. The customers would notice first during a conversation.  I would make the following checks: 
+Within the golden dataset, I would include recorded audio  variants across accent, dialect and speech-impairment audio and ensure experience and responses are consistent. There should be a maximum gap of max gap of 10% accuracy rate versus the best group.  This should be re-run per release gate. The data used should be sources from real customer recording from contact centre. The sample size should be 100 samples per different accent/impairment.
+I would conduct audit of call recordings, across interactions with difference in accents, dialect, regions etc, what the escalation rates and accuracy rates are. This audit should be conducted monthly.
 
-- **Critical gap:** _the ❌ you cannot accept_
-- **Why critical:** _…_
-- **Mitigation plan:** _concrete plan with a date/owner — not "we'll add it later"._
+
+
+## After the Pressure Test
+
+I changed the product coverage: UX trust should be downgraded to partial, the sample size is too small. Robustness should be downgraded to partial, as it flags for new topics, not failures on in-scope queries. My accepted gap, trigger should be changed from 50% to lower rate as the monitoring required for this is cheap. 
+
+I also changed my fairness plan, I should define what counts as a pass and failures during evals and define the sampling size per group.
+
