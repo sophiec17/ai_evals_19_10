@@ -1,26 +1,32 @@
-# Lab 2, Ascend IQ Budget Crisis
-
-> Repo file `ai-evals/05-scale/lab-2-budget-crisis.md`. Allocate Level 1/2/3 coverage across the 5 failure modes under the **$200K/quarter cap** with **max 3 at Level 3**.
->
-> Fill this with the **Budget Crisis Tool**, then **Copy markdown** and paste it over this file. The headings below mirror the tool's output exactly.
+# Module 5 · Eval Budget · Ascend IQ
 
 **Quarterly budget cap:** $200,000
-**Total Level 3 spend:** _$… (… of max 3 L3 slots used)_
+**Online eval spend:** $155,000 (2 of at most 3 online evals)
 
-## Portfolio decision grid
+## Budget
 
 | Failure | Trust metric | Risk | Level | Cost |
-|---|---|---|---|---|
-| Data Fabrication | Hallucination Rate | P0 | _L1 / L2 / L3_ | _$…_ |
-| Context Specificity | UX Trust | P1 | _L1 / L2 / L3_ | _$…_ |
-| Source Attribution Failure | Robustness | P1 | _L1 / L2 / L3_ | _$…_ |
-| Data Bias | Fairness | P2 | _L1 / L2 / L3_ | _$…_ |
-| Cost Overruns | Latency | P3 | _L1 / L2 / L3_ | _$…_ |
+| --- | --- | :---: | :---: | ---: |
+| Data Fabrication | Hallucination Rate | P0 | Online eval | $85,000 |
+| Context Specificity | Robustness | P1 | Online eval | $70,000 |
+| Overconfident Tone | UX Trust | P1 | Periodic audit | $6,500 |
+| Data Bias | Fairness | P2 | Code-based check | $2,750 |
+| Slow Answers | Latency | P3 | Code-based check | $1,250 |
 
-_Reference L3 costs: Hallucination $85K · Context $70K · Attribution $65K · Bias $55K · Latency $25K. L2 ≈ 10% of L3, L1 ≈ 5% of L3._
+## Downgrades
 
-## Fallback methods (non-Level 3 items)
+### Periodic audit · Overconfident Tone (UX Trust · P1)
+- **Cheaper check:** Weekly audit, using LLM as a judge to check for overconfident tone with human in the loop 
+- **Why it’s enough:** This risk is P1 however overconfidence tone and stating guesses as facts are a symptoms of larger failures in the system in robustness and hallucination.
 
-### L_n_ · _Failure name_ (_metric_ · _risk_)
-- **Method:** _the cheaper fallback you'll run instead of L3_
-- **Why this fallback is defensible:** _the story you could defend in a customer incident review — especially if you downgraded a P0/P1._
+### Code-based check · Data Bias (Fairness · P2)
+- **Cheaper check:** weekly audit, run code to check using representation check, based on the APAC share of sources cited or used in the summary, divided by APAC share of sources retrieved.
+- **Why it’s enough:** This risk is a P2 because  there's no reputational damage but there's potential risk of customer churn. The weekly audit ensures we close the gap on source coverage between APAC and US data. This check cannot tell whether an APAC source was omitted because it wasn't relevant or because of the bias
+
+### Code-based check · Slow Answers (Latency · P3)
+- **Cheaper check:** every response, this should be based in the code with latency and timeout measurements
+- **Why it’s enough:** It might miss how often users are waiting, and instance where it's slow but just just the threshold,
+
+
+
+
