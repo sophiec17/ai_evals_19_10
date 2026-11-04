@@ -4,9 +4,9 @@
 
 | Rank | Failure | Trust Tag | Frequency | Severity |
 |---|---|---|---|---|
-| 1 | Showing incorrect information | #ROBUSTNESS  | 4/20, HIGH | P0 |
-| 2 | Omitting important information  |  #HALLUCINATION  | 3/20, HIGH | P1 |
-| 3 | Bias in companies and competitor analysis  | #HALLUCINATION | 1/20, LOW | P3 |
+| 1 | Not showing correctly displaying retrieved information | #ROBUSTNESS  | 1/20, HIGH | P2 |
+| 2 | Omitting important information  |  #HALLUCINATION  | 3/20, HIGH | P0 |
+| 3 | Incorrect tone of voice | #HALLUCINATION | 1/20, LOW | P3 |
 
 ## #1 Risk · Business Impact
 
