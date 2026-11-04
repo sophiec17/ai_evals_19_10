@@ -1,47 +1,22 @@
-# Ship/Hold Memo · Ascend IQ
+# Ship-or-Hold Memo · Ascend IQ
 
-> Repo file `ai-evals/06-culture/lab-1-ship-hold-memo.md`. A Pyramid-Principle executive memo: the recommendation comes **first**.
->
-> Fill this with the **Ship/Hold Memo Builder**, then **Copy markdown** and paste it over this file. The headings below mirror the tool's output exactly.
-
-> **Decision:** 🚀 SHIP _(or 🛑 HOLD)_
-
-**To:** _[CPO] · cc Eng Lead · Trust & Safety_
-**From:** _[Your Name] · AI Evals Cohort · [Date]_
+> **Decision:** HOLD
 
 ## The Answer
 
-_First sentence = the recommendation and the business reason. Do not bury it._
+Ascend IQ have two critical P0 failures, firstly robustness gap as it's not correctly displaying the retrieved information. Secondly, it's hallucinating facts resulting incorrect data being presented to business users
 
 ## The Arguments
 
-### 1. _Argument pillar title_
+### 1. Hallucinated facts reach business users and ruin customer trust
 
-_…_
+Evidence: Ascend IQ evals have flagged 8/20 failed test cases, where the platform provides inaccurate and untrustworthy content. One example shows  Ascend IQ providing outdated pricing i.e. showing a $49 price, but the reference says "New Price (Updated yesterday): $59/mo."
 
-### 2. _Argument pillar title_
+### 2. Retrieved information is displayed incorrectly
 
-_…_
-
-### 3. _Argument pillar title_
-
-_…_
-
-## Evidence · Trust Metrics
-
-```
-- Metric: result (Gate: bar) PASS/FAIL · Source
-- … cite exact numbers from M2–M5 (hallucination rate vs gate, factual grounding %, bias coverage %, p95 latency)
-```
-
-## Business Risk
-
-_Quantified SHIP-path vs HOLD-path risk (revenue, churn, competitive window)._
+Evidence: Ascend IQ evals have flagged 1/20 failed test cases. The platform retrieves the right information but doesn’t show it correctly, so users see content that doesn’t match the source.The test case failed to provide a correct answer even when a reference shows a ""SOC2 Type II Certified" badge visible."
 
 ## Next Step · Decision Needed
 
-_A specific decision request with a deadline — e.g. "Approve the Hold rollback by Friday to keep the Q3 launch window."_
+Recommend we hold the Ascend IQ launch; please approve the hold. Both these failures reflect 9/20 of Ascend IQ test cases therefore the recommendation is not to ship due concerns on reliability and accuracy.
 
-## Reflection
-
-_What defining "good enough" forced you to confront._
