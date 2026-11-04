@@ -4,9 +4,9 @@
 
 | Rank | Failure | Trust Tag | Frequency | Severity |
 |---|---|---|---|---|
-| 1 | Not showing correctly displaying retrieved information | #ROBUSTNESS  | 1/20, HIGH | P2 |
+| 1 | Not correctly displaying the retrieved information | #ROBUSTNESS  | 1/20, HIGH | P0 |
 | 2 | Omitting important information  |  #HALLUCINATION  | 8/20, HIGH | P0 |
-| 3 | Incorrect tone of voice | #HALLUCINATION | 1/20, LOW | P3 |
+| 3 | Incorrect tone of voice | #UXTRUST | 1/20, LOW | P2 |
 
 ## #1 Risk · Business Impact
 
