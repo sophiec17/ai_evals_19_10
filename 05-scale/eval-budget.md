@@ -4,7 +4,7 @@
 
 | Product | Hallucination Rate | Fairness | Latency | UX Trust | Robustness |
 |---|---|---|---|---|---|
-| AI Voice Agent | ⚠️ Partial | ⚠️ Partial | ⚠️ Partial | ✅ Covered | ✅ Covered |
+| AI Voice Agent | ⚠️ Partial | ❌ Gap | ❌ Gap | ⚠️ Partial | ⚠️ Partial |
 
 ## What Runs Today
 
@@ -14,21 +14,18 @@
 
 ## Accepted Gap
 
-**Latency.** We accept this gap because there should be in-built timeout on response processing and generating. Once request hit threshold, there should be in-built fallback journeys.
+**Fairness.** We accept this gap because as part of the pre-release evals we will have our golden dataset covering a range of accents, dialects, speech impairments to ensure users should not receive bias responses and users for the same queries should receive consistent responses.  After release, we will run regional audits to verify that escalation rates and accuracy rates are consistent across regions. 
 
 We’ll look again:  We'll revise this, if escalation rates are above 30%. 
 
 ## Critical Gap
 
-We’ve flagged Fairness as the most critical gap for AI Voice Agent because users should not receive bias responses and users for the same queries should receive consistent responses. Fairness failures (accents, dialects, speech impairments) carry reputational and regulatory exposure. The customers would notice first during a conversation.  I would make the following checks: 
-Within the golden dataset, I would include recorded audio  variants across accent, dialect and speech-impairment audio and ensure experience and responses are consistent. There should be a maximum gap of max gap of 10% accuracy rate versus the best group.  This should be re-run per release gate. The data used should be sources from real customer recording from contact centre. The sample size should be 100 samples per different accent/impairment.
-I would conduct audit of call recordings, across interactions with difference in accents, dialect, regions etc, what the escalation rates and accuracy rates are. This audit should be conducted monthly.
-
-
+We’ve flagged latency as the most critical failures, callers will notice within second, if the AI agent lags, pauses or breaks-up. Voice AI should instantly know when a customer  starts or stop speaking and response instantly.  Customers have higher expectation of latency via voice as suppose to chat messaging. A latency failure would frustrate customers and lead to more abandon calls and higher human agent escalation. To close this gap, we should have pre-release checks and continuous monitoring in production. Therefore should be a latency threshold as part of pre-release evals and run a production 
+drift monitor to track latency alert within minutes when latency falls below expected threshold.
 
 ## After the Pressure Test
 
-I changed the product coverage: UX trust should be downgraded to partial, the sample size is too small. Robustness should be downgraded to partial, as it flags for new topics, not failures on in-scope queries. My accepted gap, trigger should be changed from 50% to lower rate as the monitoring required for this is cheap. 
+I changed the product coverage: UX trust should be downgraded to partial, the sample size is too small. Robustness should be downgraded to partial, as it flags for new topics, not failures on in-scope queries. My accepted gap, trigger should be changed from 50% to lower rates. Within my latency pre-release checks, I should also run load testing for expected peak volumes and concurrency. The latency metrics and threshold should be spilt by: turn latency, endpointing delay, barge-in, false endpoint rate, component latency, audio break-up. 
 
-I also changed my fairness plan, I should define what counts as a pass and failures during evals and define the sampling size per group.
+
 
